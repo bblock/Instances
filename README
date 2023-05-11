@@ -1,0 +1,71 @@
+INSTANCES
+
+This Vala/GTK3 app demonstrates some basic functionality of a multi-tabbed, 
+multi-instance application. It implements what appears to be a rudimentary text 
+editor (you can't actually save any edits made to a file). Its purpose isn't 
+to provide editor functionality but rather, to serve as a kind of template for 
+developing applications that provide a multi-tabbed UI, the ability to launch 
+multiple window instances and the ability to run from the command line.
+
+Although I created this app in order to help increase my own understanding of 
+the various concepts demonstrated, hopefully it can be of help to other Vala
+developers as well.
+
+
+RUNNING APP FROM THE COMMAND LINE
+
+As a first example of running the app from the command line, you can obtain 
+the app's version via the following command:
+
+   instances --version
+
+If you wish to open one or more document files from the command line, simply 
+provide a list of files as follows:
+
+   instances <file1.txt> <file2.txt> ...
+
+If the app is already running, these files will be opened in it; however, 
+if you preface the file list with the "new-window" switch, such files will be
+opened in a NEW window instance instead:
+
+   instances --new-window <file1.txt> <file2.txt> ...
+
+From the command line you can also initiate the app with a new tab by issuing
+the "new-tab" switch:
+
+   instances --new-tab
+
+To view all of the app's command line options, run the app with the "help" 
+switch:
+
+   instances --help
+
+
+MAKING COMMAND LINE FUNCTIONS MORE WIDELY AVAILABLE
+
+The "new-window" switch can be referenced in the app's ".desktop" file, thereby 
+enabling you to right-click on its icon shown in the desktop's dock and choose 
+"new window". This can be done by simply adding the following to the bottom of 
+the app's ".desktop" file: 
+
+   Actions=new-window;
+
+   [Desktop Action new-window]
+   Name=New Window
+   Exec=instances --new-window
+
+
+AVAILABLE SHORTCUTS
+
+   APPLICATION-RELATED
+
+   New Window                                        <Ctrl> + <Shift> + N
+   Quit Application (closes all its windows)         <Ctrl> + <Shift> + Q
+
+   WINDOW-RELATED
+
+   New Tab                                           <Ctrl> + N
+   Open Document                                     <Ctrl> + O
+   Close Tab                                         <Ctrl> + W
+   Quit Window                                       <Ctrl> + Q
+

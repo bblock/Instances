@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=instances
+Exec=instances
+Icon=com.github.bblock.instances
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

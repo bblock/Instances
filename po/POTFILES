@@ -1,0 +1,7 @@
+data/com.github.bblock.instances.desktop.in
+data/com.github.bblock.instances.appdata.xml.in
+data/com.github.bblock.instances.gschema.xml
+src/window.ui
+src/main.vala
+src/window.vala
+
